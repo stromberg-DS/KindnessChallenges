@@ -6,16 +6,18 @@
 import os
 import random
 
+pathName = "C:\\Users\\dstromberg\\Documents\\Code\\SciKi\\KindnessChallenges\\Challenges\\"
+textTypeFolder = ["Challenges\\", "Quotes\\"]
+difficultyFolder = ["1_Easy\\", "2_Medium\\", "3_Hard\\"]
+numFilesInFolder = [11, 12, 6]
+
+os.startfile(pathName + "StartupPrint.txt", "print")
+
 while True:
     input("Press enter")
-    textTypeFolder = ["Challenges\\", "Quotes\\"]
-    difficultyFolder = ["1_Easy\\", "2_Medium\\", "3_Hard\\"]
-    numFilesInFolder = [11, 12, 6]
 
     difficulty = random.randint(0,2)
     filename = random.randint(1, numFilesInFolder[difficulty])
-
-    pathName = "C:\\Users\\dstromberg\\Documents\\Code\\SciKi\\KindnessChallenges\\Challenges\\"
 
     print(difficulty)
     print(filename)
