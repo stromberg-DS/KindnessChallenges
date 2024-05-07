@@ -1,0 +1,5 @@
+{
+    "board": "arduino:avr:leonardo",
+    "sketch": "Arduino_EnterButton\\Arduino_EnterButton.ino",
+    "port": "COM42"
+}

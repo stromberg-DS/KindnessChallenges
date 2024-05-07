@@ -1,21 +1,32 @@
 
 #include <Keyboard.h>
+#include "Button.h"
 
-int buttonPin = 4;
+const int buttonDelay = 2000;
+unsigned long currentMillis;
+unsigned long lastMillis;
+
+Button kindButton(4);
+
 void setup() {
-  pinMode(buttonPin, INPUT_PULLUP);
   Keyboard.begin();
 }
 
 void loop() {
-  bool isPressed;
+  currentMillis = millis();
 
-  isPressed = !digitalRead(buttonPin);
-
-  if(isPressed){
-    Keyboard.press(KEY_RETURN);
-    delay(200);
-    Keyboard.releaseAll();
+  if((currentMillis - lastMillis) > buttonDelay){
+    if(kindButton.isClicked()){
+      Keyboard.press(KEY_RETURN);
+      Keyboard.releaseAll();
+      Serial.println("Clicked");
+      lastMillis = currentMillis;
+    }
+    
+    // if(kindButton.isReleased()){
+    //   Serial.println("Released");
+    //   Serial.println(currentMillis);
+    //   lastMillis = currentMillis;
+    // }
   }
-  Serial.println(isPressed);
 }
