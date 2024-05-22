@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   sodipodi:docname="ButtonLogic.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:snap-global="true"
+     inkscape:object-paths="true"
+     inkscape:zoom="0.54047838"
+     inkscape:cx="574.49107"
+     inkscape:cy="455.15234"
+     inkscape:window-width="1482"
+     inkscape:window-height="1056"
+     inkscape:window-x="557"
+     inkscape:window-y="83"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g3221"
+       transform="translate(40.34533,81.628613)">
+      <rect
+         style="fill:#ff0000;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round"
+         id="rect846"
+         width="200"
+         height="26.653847"
+         x="-6.7881093"
+         y="-43.727383" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.4323px;line-height:1.25;font-family:Raleway;-inkscape-font-specification:'Raleway Bold';stroke-width:0.264583"
+         x="67.833481"
+         y="-24.84483"
+         id="text1678"><tspan
+           sodipodi:role="line"
+           id="tspan1676"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Raleway;-inkscape-font-specification:'Raleway Bold';stroke-width:0.264583"
+           x="67.833481"
+           y="-24.84483">Printer</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:6.89333px;line-height:1.25;font-family:Raleway;-inkscape-font-specification:Raleway;stroke-width:0.264583"
+       x="73.138809"
+       y="20.910332"
+       id="text4691"
+       transform="rotate(45)"><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="73.138809"
+         y="20.910332"
+         id="tspan4693">Rx Button Press</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.9;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 33.557221,37.90123 v 28.515443 l 38.36734,38.367337"
+       id="path6004" />
+    <text
+       xml:space="preserve"
+       style="font-size:6.89333px;line-height:1.25;font-family:Raleway;-inkscape-font-specification:Raleway;stroke-width:0.264583"
+       x="211.96136"
+       y="-120.78967"
+       id="text6159"
+       transform="rotate(45)"><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="211.96136"
+         y="-120.78967"
+         id="tspan6157">Prints out receipt</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.9;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 233.55721,37.90123 v 28.515443 l 38.36734,38.367337"
+       id="path6161" />
+    <rect
+       style="fill:#ff0000;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round"
+       id="rect846-7"
+       width="200"
+       height="26.653847"
+       x="-16.44278"
+       y="11.247742" />
+    <text
+       xml:space="preserve"
+       style="font-size:6.89333px;line-height:1.25;font-family:Raleway;-inkscape-font-specification:Raleway;stroke-width:0.264583"
+       x="-16.474815"
+       y="-6.4218416"
+       id="text4691-6"
+       transform="rotate(-45)"><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-16.474815"
+         y="-6.4218416"
+         id="tspan4693-3">Button Press</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.9;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M -16.442779,37.901586 V 9.3861437 l 38.36734,-38.3673397"
+       id="path6004-7" />
+    <text
+       xml:space="preserve"
+       style="font-size:6.89333px;line-height:1.25;font-family:Raleway;-inkscape-font-specification:Raleway;stroke-width:0.264583"
+       x="124.94653"
+       y="134.99951"
+       id="text6159-0"
+       transform="rotate(-45)"><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="124.94653"
+         y="134.99951"
+         id="tspan6157-6">Prints out receipt</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.9;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 183.55722,37.901584 V 9.3861417 l 38.36734,-38.3673397"
+       id="path6161-4" />
+    <rect
+       style="fill:#008000;stroke:none;stroke-width:0.899999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect8510"
+       width="50"
+       height="26.653847"
+       x="-16.44278"
+       y="11.247383" />
+    <rect
+       style="fill:#008000;stroke:none;stroke-width:0.899999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect8628"
+       width="50"
+       height="26.653847"
+       x="33.55722"
+       y="11.247383" />
+    <rect
+       style="fill:#ffff00;stroke:none;stroke-width:0.899999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect8630"
+       width="50"
+       height="26.653847"
+       x="83.55722"
+       y="11.247383" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.08232px;line-height:1.25;font-family:Raleway;-inkscape-font-specification:'Raleway Bold';stroke-width:0.264583"
+       x="-61.278805"
+       y="16.447006"
+       id="text8652"><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Raleway;-inkscape-font-specification:'Raleway Bold';stroke-width:0.264583"
+         x="-61.278805"
+         y="16.447006"
+         id="tspan9222">Length</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Raleway;-inkscape-font-specification:'Raleway Bold';stroke-width:0.264583"
+         x="-61.278805"
+         y="25.299904"
+         id="tspan9966">changes</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Raleway;-inkscape-font-specification:'Raleway Bold';stroke-width:0.264583"
+         x="-61.278805"
+         y="34.152809"
+         id="tspan9226">difficulty</tspan></text>
+    <rect
+       style="fill:#008000;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round"
+       id="rect10114"
+       width="200"
+       height="26.653847"
+       x="-11.057889"
+       y="183.31947" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.4323px;line-height:1.25;font-family:Raleway;-inkscape-font-specification:'Raleway Bold';stroke-width:0.264583"
+       x="46.919495"
+       y="200.73341"
+       id="text10118"><tspan
+         sodipodi:role="line"
+         id="tspan10116"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Raleway;-inkscape-font-specification:'Raleway Bold';stroke-width:0.264583"
+         x="46.919495"
+         y="200.73341">Button &amp; LEDs</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.4323px;line-height:1.25;font-family:Raleway;-inkscape-font-specification:'Raleway Bold';stroke-width:0.264583"
+       x="27.601372"
+       y="29.457985"
+       id="text10118-2"><tspan
+         sodipodi:role="line"
+         id="tspan10116-2"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Raleway;-inkscape-font-specification:'Raleway Bold';stroke-width:0.264583"
+         x="27.601372"
+         y="29.457985">Button &amp; LEDs</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.89333px;line-height:1.25;font-family:Raleway;-inkscape-font-specification:Raleway;stroke-width:0.264583"
+       x="-131.74403"
+       y="109.5397"
+       id="text10122"
+       transform="rotate(-45)"><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-131.74403"
+         y="109.5397"
+         id="tspan10120">Button Press:</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-131.74403"
+         y="118.15636"
+         id="tspan13401">Animate LEDs</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.9;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m -11.057888,209.9733 v -28.51544 l 38.36734,-38.36734"
+       id="path10124" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.08232px;line-height:1.25;font-family:Raleway;-inkscape-font-specification:'Raleway Bold';stroke-width:0.264583"
+       x="-85.755569"
+       y="194.39316"
+       id="text10144"><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Raleway;-inkscape-font-specification:'Raleway Bold';stroke-width:0.264583"
+         x="-85.755569"
+         y="194.39316"
+         id="tspan10227">Single Difficulty</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Raleway;-inkscape-font-specification:'Raleway Bold';stroke-width:0.264583"
+         x="-85.755569"
+         y="203.24606"
+         id="tspan10229">(changed elsewhere)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.89333px;line-height:1.25;font-family:Raleway;-inkscape-font-specification:Raleway;stroke-width:0.264583"
+       x="-94.074814"
+       y="158.40892"
+       id="text11437"
+       transform="rotate(-45)"><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-94.074814"
+         y="158.40892"
+         id="tspan11435">Send print signal</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.9;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 46.707297,209.97331 v -28.51544 l 38.36734,-38.36734"
+       id="path11439" />
+    <g
+       id="g15438"
+       transform="translate(53.495406,253.70069)">
+      <rect
+         style="fill:#ff0000;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round"
+         id="rect15432"
+         width="200"
+         height="26.653847"
+         x="-6.7881093"
+         y="-43.727383" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.4323px;line-height:1.25;font-family:Raleway;-inkscape-font-specification:'Raleway Bold';stroke-width:0.264583"
+         x="67.833481"
+         y="-24.84483"
+         id="text15436"><tspan
+           sodipodi:role="line"
+           id="tspan15434"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Raleway;-inkscape-font-specification:'Raleway Bold';stroke-width:0.264583"
+           x="67.833481"
+           y="-24.84483">Printer</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:6.89333px;line-height:1.25;font-family:Raleway;-inkscape-font-specification:Raleway;stroke-width:0.264583"
+       x="204.11064"
+       y="133.28516"
+       id="text15442"
+       transform="rotate(45)"><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="204.11064"
+         y="133.28516"
+         id="tspan15440">Rx Button Press</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.9;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 46.707296,209.97331 v 28.51544 l 38.367345,38.36734"
+       id="path15444" />
+    <text
+       xml:space="preserve"
+       style="font-size:6.89333px;line-height:1.25;font-family:Raleway;-inkscape-font-specification:Raleway;stroke-width:0.264583"
+       x="342.93323"
+       y="-8.4148521"
+       id="text15448"
+       transform="rotate(45)"><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="342.93323"
+         y="-8.4148521"
+         id="tspan15446">Prints out receipt</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.9;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 246.70728,209.97331 v 28.51544 l 38.36734,38.36734"
+       id="path15450" />
+  </g>
+</svg>
