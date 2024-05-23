@@ -3,7 +3,7 @@
 #include "Button.h"
 
 
-const int buttonDelay = 2000;
+const int buttonDelay = 2000;   //time to hold button before sending print command
 const int PIXEL_COUNT = 16;
 const int LED_PIN = 3;
 unsigned long currentMillis;
@@ -14,6 +14,7 @@ unsigned int lastClicked = 0;
 int fullCircleTime = 5000;
 int lastLitLED = 0;
 float t;
+bool isFirstButtonHold = true;
 
 Adafruit_NeoPixel pixel(PIXEL_COUNT, LED_PIN, NEO_GRB);
 Button kindButton(4);
@@ -29,19 +30,28 @@ void setup() {
 void loop() {
   currentMillis = millis();
   pixel.setBrightness(brightness);
-  Serial.println(brightness);
-
 
   if (kindButton.isClicked()) {
     lastClicked = currentMillis;
+    isFirstButtonHold = true;
   }
 
   if (kindButton.isPressed()) {
     pressedTime = currentMillis - lastClicked;
     lastLitLED = map(pressedTime, 0, fullCircleTime, 0, PIXEL_COUNT);
+
+    if(isFirstButtonHold){
+      if(pressedTime > buttonDelay){
+        Serial.println("SEND TO PRINTER!!!");
+        Keyboard.press(KEY_RETURN);
+        Keyboard.releaseAll();
+        isFirstButtonHold = false;
+      }
+    }
+
     for (int i = 0; i < PIXEL_COUNT; i++) {
       if (i < lastLitLED) {
-        pixel.setPixelColor(i, 0xFF0000);
+        pixel.setPixelColor(i, 0xAA22AA);
       } else {
         pixel.setPixelColor(i, 0);
       }
@@ -54,15 +64,6 @@ void loop() {
     pixel.clear();
     brightness = 100;
   }
-
-  // LED loop test
-  // for (int i = 0; i < PIXEL_COUNT; i++) {
-  //   pixel.clear();
-  //   pixel.setPixelColor(i, 0xFF0000);
-  //   pixel.show();
-  //   delay(50);
-  // }
-
 
 
   // if ((currentMillis - lastMillis) > buttonDelay) {
@@ -78,9 +79,9 @@ void loop() {
 }
 
 int pulseLEDs(int timeIn) {
+  float pulseSpeed = 1.5;
+  
   timeIn -= fullCircleTime;
   t = timeIn / 1000.0;
-  Serial.print("Time in:");
-  Serial.println(timeIn);
-  return 40 * sin((PI * t / 2.0) + (PI/2)) + 60;
+  return 40 * sin((PI * t *1.5) + (PI/2)) + 60;
 }
