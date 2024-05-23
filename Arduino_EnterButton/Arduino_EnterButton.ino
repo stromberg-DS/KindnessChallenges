@@ -11,7 +11,7 @@ unsigned long lastMillis;
 int brightness = 100;
 unsigned int pressedTime = 0;
 unsigned int lastClicked = 0;
-int fullCircleTime = 2000;
+int fullCircleTime = 5000;
 int lastLitLED = 0;
 float t;
 
@@ -29,6 +29,7 @@ void setup() {
 void loop() {
   currentMillis = millis();
   pixel.setBrightness(brightness);
+  Serial.println(brightness);
 
 
   if (kindButton.isClicked()) {
@@ -46,13 +47,8 @@ void loop() {
       }
     }
 
-    if (pressedTime > fullCircleTime+500) {
-      brightness = pulseLEDs(pressedTime+500);
-      // if ((pressedTime % 1000) < 500) {
-      //   brightness = 50;
-      // } else {
-      //   brightness = 100;
-      // }
+    if (pressedTime > fullCircleTime) {
+      brightness = pulseLEDs(pressedTime);
     }
   } else {
     pixel.clear();
@@ -82,6 +78,9 @@ void loop() {
 }
 
 int pulseLEDs(int timeIn) {
-  t = timeIn / 1000.0 + 0.5;
-  return 40 * sin(2 * PI * t / 2.0 + (PI / 2)) + 60;
+  timeIn -= fullCircleTime;
+  t = timeIn / 1000.0;
+  Serial.print("Time in:");
+  Serial.println(timeIn);
+  return 40 * sin((PI * t / 2.0) + (PI/2)) + 60;
 }
