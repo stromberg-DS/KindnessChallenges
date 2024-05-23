@@ -61,14 +61,14 @@ void loop() {
   while((subscription = mqtt.readSubscription(100))){
     if(subscription == &printSub){
       isDashButtonPressed = true;
-      Serial.printf("Dash Button Pressed!\n");
+      // Serial.printf("Dash Button Pressed!\n");
     }
   }
 
   if (kindButton.isClicked()) {
     lastClicked = currentMillis;
     isFirstButtonHold = true;
-    Serial.printf("CLICKED\n");     
+    // Serial.printf("CLICKED\n");     
   }
 
   if (kindButton.isPressed()) {
@@ -77,7 +77,7 @@ void loop() {
 
     if(isFirstButtonHold || isDashButtonPressed){
       if((pressedTime > buttonDelay) || isDashButtonPressed){
-        Serial.println("SEND TO PRINTER!!!");
+        // Serial.println("SEND TO PRINTER!!!");
         Keyboard.click(KEY_RETURN);
         printCount++;
         if(mqtt.Update()){
