@@ -24,7 +24,7 @@ unsigned long lastMillis;
 int brightness = 100;
 unsigned int pressedTime = 0;
 unsigned int lastClicked = 0;
-int fullCircleTime = 5000;
+int fullCircleTime = 3000;
 int lastLitLED = 0;
 float t;
 bool isFirstButtonHold = true;
@@ -58,12 +58,12 @@ void loop() {
   pixel.setBrightness(brightness);
 
   Adafruit_MQTT_Subscribe *subscription;
-  while((subscription = mqtt.readSubscription(100))){
-    if(subscription == &printSub){
-      isDashButtonPressed = true;
-      // Serial.printf("Dash Button Pressed!\n");
-    }
-  }
+  // while((subscription = mqtt.readSubscription(100))){
+  //   if(subscription == &printSub){
+  //     isDashButtonPressed = true;
+  //     // Serial.printf("Dash Button Pressed!\n");
+  //   }
+  // }
 
   if (kindButton.isClicked()) {
     lastClicked = currentMillis;
@@ -75,16 +75,15 @@ void loop() {
     pressedTime = currentMillis - lastClicked;
     lastLitLED = map(pressedTime, 0, fullCircleTime, 0, PIXEL_COUNT);
 
-    if(isFirstButtonHold || isDashButtonPressed){
-      if((pressedTime > buttonDelay) || isDashButtonPressed){
+    if(isFirstButtonHold){ 
+      if((pressedTime > buttonDelay)){
         // Serial.println("SEND TO PRINTER!!!");
         Keyboard.click(KEY_RETURN);
         printCount++;
-        if(mqtt.Update()){
-          printPub.publish(printCount);
-        }
+        // if(mqtt.Update()){
+        //   printPub.publish(printCount);
+        // }
         isFirstButtonHold = false;
-        isDashButtonPressed = false;
       }
     }
 
