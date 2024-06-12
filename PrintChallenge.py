@@ -6,7 +6,12 @@
 import os
 import random
 
+#Update the path below so it goes to the real location of your
+#   challenges folder. Make sure to swap all single backslashes (\)
+#   for double backslashes (\\). Make sure you have two tacked
+#   onto the end  ("...Challenges\\")
 pathName = "C:\\Users\\dstromberg\\Documents\\Code\\SciKi\\KindnessChallenges\\Challenges\\"
+
 textTypeFolder = ["Challenges\\", "Quotes\\"]
 difficultyFolder = ["1_Easy\\", "2_Medium\\", "3_Hard\\"]
 numFilesInFolder = [11, 12, 6]
