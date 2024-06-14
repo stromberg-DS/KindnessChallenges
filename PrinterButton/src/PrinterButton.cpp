@@ -17,14 +17,16 @@ SYSTEM_MODE(AUTOMATIC);
 SYSTEM_THREAD(ENABLED);
 
 
-const int buttonDelay = 2000;   //time to hold button before sending print command
-const int PIXEL_COUNT = 16;
+const int BUTTON_DELAY = 4000;   //time to hold button before sending print command
+const int PRINTER_DELAY = 1000; //How long it takes to print after signal is sent
+int fullCircleTime = BUTTON_DELAY + PRINTER_DELAY;
+const int PIXEL_COUNT = 192;  //192 pixels on neon-style strip
 unsigned long currentMillis;
 unsigned long lastMillis;
 int brightness = 100;
 unsigned int pressedTime = 0;
 unsigned int lastClicked = 0;
-int fullCircleTime = 3000;
+
 int lastLitLED = 0;
 float t;
 bool isFirstButtonHold = true;
@@ -76,7 +78,7 @@ void loop() {
     lastLitLED = map(pressedTime, 0, fullCircleTime, 0, PIXEL_COUNT);
 
     if(isFirstButtonHold){ 
-      if((pressedTime > buttonDelay)){
+      if((pressedTime > BUTTON_DELAY)){
         // Serial.println("SEND TO PRINTER!!!");
         Keyboard.click(KEY_RETURN);
         printCount++;
@@ -104,7 +106,7 @@ void loop() {
   }
 
 
-  // if ((currentMillis - lastMillis) > buttonDelay) {
+  // if ((currentMillis - lastMillis) > BUTTON_DELAY) {
   //   if (kindButton.isClicked()) {
   //     Keyboard.press(KEY_RETURN);
   //     Keyboard.releaseAll();
