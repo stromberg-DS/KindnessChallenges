@@ -16,8 +16,10 @@ EASY = 1
 MEDIUM = 2
 HARD = 3
 
+##############
 #Change this to adjust what difficulty level you want
-DIFFICULTY_LEVEL = HARD
+DIFFICULTY_LEVEL = QUOTES
+##############
 
 def waitForInput():
     input("Press Enter")
@@ -36,11 +38,11 @@ print(time.time())
 #     NOTE: Make sure to swap all single backslashes (\)
 #     for double backslashes (\\). Make sure you have two tacked
 #     onto the end  ("...Challenges\\")
-pathName = "C:\\Users\\dstromberg\\OneDrive\\KindnessChallenges\\Challenges\\"
-quotePath = "C:\\Users\\dstromberg\\OneDrive\\KindnessChallenges\\Quotes\\"
-easyPath = "C:\\Users\\dstromberg\\OneDrive\\KindnessChallenges\\Challenges\\1_Easy\\"
-medPath = "C:\\Users\\dstromberg\\OneDrive\\KindnessChallenges\\Challenges\\2_Medium\\"
-hardPath = "C:\\Users\\dstromberg\\OneDrive\\KindnessChallenges\\Challenges\\3_Hard\\"
+pathName = "C:\\Users\\dstromberg\\OneDrive\\KindnessChallenges\\"
+quotePath = pathName + "Quotes\\"
+easyPath = pathName + "Challenges\\1_Easy\\"
+medPath = pathName + "Challenges\\2_Medium\\"
+hardPath = pathName + "Challenges\\3_Hard\\"
 currentPath = [quotePath, easyPath, medPath, hardPath]
 
 quoteList = os.listdir(quotePath)
@@ -65,7 +67,7 @@ textTypeFolder = ["Challenges\\", "Quotes\\"]
 difficultyFolder = ["1_Easy\\", "2_Medium\\", "3_Hard\\"]
 numFilesInFolder = [11, 12, 6]
 
-os.startfile(pathName + "StartupPrint.txt", "print")
+os.startfile(pathName + "Challenges\\StartupPrint.txt", "print")
 
 while True:
     input("Press enter")
@@ -75,16 +77,8 @@ while True:
         print("Focus Time!")
         lastFocusTime = time.time()
     
-    filename = currentList[DIFFICULTY_LEVEL][random.randrange(0, len(currentList[DIFFICULTY_LEVEL]))]
+    rndMax = random.randrange(0, len(currentList[DIFFICULTY_LEVEL]))
+    filename = currentList[DIFFICULTY_LEVEL][rndMax]
     print(currentPath[DIFFICULTY_LEVEL] + filename)
     os.startfile(currentPath[DIFFICULTY_LEVEL] + filename, "print")
-
-
-
-    # difficulty = random.randint(0,2)
-    # filename = random.randint(1, numFilesInFolder[difficulty])
-
-    # print(difficulty)
-    # print(filename)
-
-    # os.startfile(pathName + difficultyFolder[difficulty] + str(filename) + ".txt", "print")    
+  
