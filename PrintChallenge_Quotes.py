@@ -18,7 +18,7 @@ HARD = 3
 
 ##############
 #Change this to adjust what difficulty level you want
-DIFFICULTY_LEVEL = MEDIUM
+DIFFICULTY_LEVEL = QUOTES
 ##############
 
 def waitForInput():
