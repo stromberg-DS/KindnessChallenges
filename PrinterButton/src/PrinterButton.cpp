@@ -2,6 +2,11 @@
  * Kindness Challenge Printer Button
  * Author: Daniel Stromberg
  * Date: 5/23/24
+ * 
+ * Names of Photons in use:
+ * Easy: RndActs_EZ
+ * Medium: RndActs_Med
+ * Hard: RndActs_Hard
 */
 
 #include "Particle.h"
@@ -17,10 +22,15 @@ SYSTEM_MODE(AUTOMATIC);
 SYSTEM_THREAD(ENABLED);
 
 
-const int BUTTON_DELAY = 4000;   //time to hold button before sending print command
+const int BUTTON_DELAY = 3000;   //time to hold button before sending print command
 const int PRINTER_DELAY = 1000; //How long it takes to print after signal is sent
 int fullCircleTime = BUTTON_DELAY + PRINTER_DELAY;
-const int PIXEL_COUNT = 192;  //192 pixels on neon-style strip
+const int PIXEL_COUNT = 195;  //192 pixels on neon-style strip
+const int HARD_COLOR_RED = 0xFF1105;
+const int MED_COLOR_YELLOW = 0xFF8805;
+const int EZ_COLOR_GREEN = 0x33FF22;
+const int THIS_STRIP_COLOR = EZ_COLOR_GREEN;  //change color here depending on the difficulty
+
 unsigned long currentMillis;
 unsigned long lastMillis;
 int brightness = 100;
@@ -53,6 +63,16 @@ void setup() {
   pixel.begin();
   pixel.setBrightness(brightness);
   mqtt.subscribe(&printSub);
+  pinMode(D7, OUTPUT);
+
+  for(int i =0; i<PIXEL_COUNT; i++){
+    pixel.setPixelColor(i, THIS_STRIP_COLOR);
+    pixel.show();
+    delay(10);
+  }
+  delay(1000);
+  // pixel.clear();
+  // pixel.show();
 }
 
 void loop() { 
@@ -86,12 +106,13 @@ void loop() {
         //   printPub.publish(printCount);
         // }
         isFirstButtonHold = false;
+        digitalWrite(D7, HIGH);
       }
     }
 
     for (int i = 0; i < PIXEL_COUNT; i++) {
       if (i < lastLitLED) {
-        pixel.setPixelColor(i, 0xAA22AA);
+        pixel.setPixelColor(i, THIS_STRIP_COLOR);
       } else {
         pixel.setPixelColor(i, 0);
       }
@@ -102,6 +123,7 @@ void loop() {
     }
   } else {
     pixel.clear();
+    digitalWrite(D7, LOW);
     brightness = 100;
   }
 
