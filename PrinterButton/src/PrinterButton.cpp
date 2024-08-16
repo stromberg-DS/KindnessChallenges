@@ -22,15 +22,19 @@ SYSTEM_MODE(AUTOMATIC);
 SYSTEM_THREAD(ENABLED);
 
 
-const int BUTTON_DELAY = 3000;   //time to hold button before sending print command
+const int EZ_BUTTON_DELAY = 3000;   //time to hold button before sending print command
+const int MED_BUTTON_DELAY = 6000;
+const int HARD_BUTTON_DELAY = 9000;
 const int PRINTER_DELAY = 1000; //How long it takes to print after signal is sent
-int fullCircleTime = BUTTON_DELAY + PRINTER_DELAY;
-const int PIXEL_COUNT = 195;  //192 pixels on neon-style strip
-const int HARD_COLOR_RED = 0xFF1105;
-const int MED_COLOR_YELLOW = 0xFF8805;
-const int EZ_COLOR_GREEN = 0x33FF22;
-const int THIS_STRIP_COLOR = EZ_COLOR_GREEN;  //change color here depending on the difficulty
+const int PIXEL_COUNT = 314;  //314 pixels on neon-style strip
+const int HARD_COLOR_RED = 0xFF1105;    //old DS red: 0xFF1105, brand red: 0xC56B29
+const int MED_COLOR_YELLOW = 0xFF8805;  //old DS yellow: 0xFF8805, brand yellow:0xF1AA1E
+const int EZ_COLOR_GREEN = 0x6AC2C4;    //old DS green: 0x33FF22
 
+const int THIS_STRIP_COLOR = HARD_COLOR_RED;  //change color here depending on the difficulty
+const int THIS_BUTTON_DELAY = HARD_BUTTON_DELAY;
+
+int fullCircleTime = THIS_BUTTON_DELAY + PRINTER_DELAY;
 unsigned long currentMillis;
 unsigned long lastMillis;
 int brightness = 100;
@@ -98,7 +102,7 @@ void loop() {
     lastLitLED = map(pressedTime, 0, fullCircleTime, 0, PIXEL_COUNT);
 
     if(isFirstButtonHold){ 
-      if((pressedTime > BUTTON_DELAY)){
+      if((pressedTime > THIS_BUTTON_DELAY)){
         // Serial.println("SEND TO PRINTER!!!");
         Keyboard.click(KEY_RETURN);
         printCount++;
@@ -113,6 +117,9 @@ void loop() {
     for (int i = 0; i < PIXEL_COUNT; i++) {
       if (i < lastLitLED) {
         pixel.setPixelColor(i, THIS_STRIP_COLOR);
+        if(i>= (PIXEL_COUNT-1)){
+          pixel.setPixelColor(i, 0x00FF00);
+        }
       } else {
         pixel.setPixelColor(i, 0);
       }

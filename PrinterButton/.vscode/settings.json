@@ -5,5 +5,5 @@
         "*.ino": "cpp"
     },
     "cmake.configureOnOpen": false,
-    "particle.targetDevice": "RndActs_EZ"
+    "particle.targetDevice": "RndActs_Hard"
 }
