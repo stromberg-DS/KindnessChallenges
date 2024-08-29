@@ -31,8 +31,12 @@ const int HARD_COLOR_RED = 0xFF1105;    //old DS red: 0xFF1105, brand red: 0xC56
 const int MED_COLOR_YELLOW = 0xFF8805;  //old DS yellow: 0xFF8805, brand yellow:0xF1AA1E
 const int EZ_COLOR_GREEN = 0x6AC2C4;    //old DS green: 0x33FF22
 
-const int THIS_STRIP_COLOR = HARD_COLOR_RED;  //change color here depending on the difficulty
-const int THIS_BUTTON_DELAY = HARD_BUTTON_DELAY;
+/////////////////// CHANGE BELOW DEPENDING ON DIFFICULTY ///////////////////
+//
+const int THIS_STRIP_COLOR = HARD_COLOR_RED;      //change color here depending on the difficulty
+const int THIS_BUTTON_DELAY = HARD_BUTTON_DELAY;    //change delay here depending on the difficulty
+//
+////////////////////////////////////////////////////////////////////////////
 
 int fullCircleTime = THIS_BUTTON_DELAY + PRINTER_DELAY;
 unsigned long currentMillis;
@@ -117,9 +121,13 @@ void loop() {
     for (int i = 0; i < PIXEL_COUNT; i++) {
       if (i < lastLitLED) {
         pixel.setPixelColor(i, THIS_STRIP_COLOR);
-        if(i>= (PIXEL_COUNT-1)){
-          pixel.setPixelColor(i, 0x00FF00);
-        }
+
+        // Use below to find last pixel on strip.
+        //
+        // if(i>= (PIXEL_COUNT-1)){
+        //   pixel.setPixelColor(i, 0x00FF00);
+        // }
+
       } else {
         pixel.setPixelColor(i, 0);
       }
