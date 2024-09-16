@@ -11,7 +11,9 @@ import pygetwindow as gw
 import time
 import pyautogui as pag
 
-timeToPrint = False
+timeToPrint = threading.Event()
+focusEvent = threading.Event()
+
 QUOTES = 0
 EASY = 1
 MEDIUM = 2
@@ -24,42 +26,36 @@ DIFFICULTY_LEVEL = MEDIUM
 
 # Wait for Enter key press
 def waitForInput():
-    global timeToPrint
     while True:
         input("Press Enter")
-        timeToPrint = True
         print("Sending to Printer!")
-
-# Test to show the current time every second to prove the program is running.
-def testPrintTime():
-    while True:
-        if not timeToPrint:
-            print("Current time:", time.strftime("%H:%M:%S"))
-            time.sleep(1)
+        timeToPrint.set()       #Signal it's time to print
 
 # Reset computer focus to python window
 def resetWindowFocus():
     while True:
-        time.sleep(5)
+        focusEvent.wait(10)     #only wake up every 10 seconds
         python_window = gw.getWindowsWithTitle(WINDOW_NAME)[0]
-        if python_window.isActive == False:
+        if not python_window.isActive:
             python_window.minimize()
             python_window.restore()
             print("Refocused the python window at:", time.strftime("%H:%M:%S"))
+        else:
+            print("Window still active!!")
+        focusEvent.clear()  #Reset event until triggered again
 
 
         
         
 # Send random file to the printer
 def printChallenge():
-    global timeToPrint
     while True:
-        if timeToPrint:
-            rndMax = random.randrange(0, len(currentList[DIFFICULTY_LEVEL]))
-            filename = currentList[DIFFICULTY_LEVEL][rndMax]
-            print(currentPath[DIFFICULTY_LEVEL] + filename)
-            # os.startfile(currentPath[DIFFICULTY_LEVEL] + filename, "print")
-            timeToPrint = False
+        timeToPrint.wait()  # Wait until signaled to print
+        rndMax = random.randrange(0, len(currentList[DIFFICULTY_LEVEL]))
+        filename = currentList[DIFFICULTY_LEVEL][rndMax]
+        print(currentPath[DIFFICULTY_LEVEL] + filename)
+        os.startfile(currentPath[DIFFICULTY_LEVEL] + filename, "print")
+        timeToPrint.clear() # Reset printing signal
 
 
 
@@ -108,22 +104,19 @@ textTypeFolder = ["Challenges\\", "Quotes\\"]
 difficultyFolder = ["1_Easy\\", "2_Medium\\", "3_Hard\\"]
 numFilesInFolder = [11, 12, 6]
 
-# os.startfile(pathName + "Challenges\\StartupPrint.txt", "print")
+os.startfile(pathName + "Challenges\\StartupPrint.txt", "print")
 
 # Start Threading
 input_thread = threading.Thread(target=waitForInput)
-time_thread = threading.Thread(target=testPrintTime)
 focus_thread = threading.Thread(target=resetWindowFocus)
 print_thread = threading.Thread(target=printChallenge)
 
 input_thread.start()
-# time_thread.start()
 focus_thread.start()
 print_thread.start()
 
 # Join threads
 input_thread.join()
-# time_thread.join()
 focus_thread.join()
 print_thread.join()
 
