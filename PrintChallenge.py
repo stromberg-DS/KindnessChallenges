@@ -9,7 +9,6 @@ from os import system
 import random
 import pygetwindow as gw
 import time
-import pyautogui as pag
 
 timeToPrint = threading.Event()
 focusEvent = threading.Event()
@@ -21,7 +20,7 @@ HARD = 3
 
 ##############
 #Change this to adjust what difficulty level you want
-DIFFICULTY_LEVEL = MEDIUM
+DIFFICULTY_LEVEL = EASY
 ##############
 
 # Wait for Enter key press
@@ -41,7 +40,7 @@ def resetWindowFocus():
             python_window.restore()
             print("Refocused the python window at:", time.strftime("%H:%M:%S"))
         else:
-            print("Window still active!!")
+            print("Window still active at:", time.strftime("%H:%M:%S" + "!!"))
         focusEvent.clear()  #Reset event until triggered again
 
 
@@ -71,11 +70,11 @@ system("title " + WINDOW_NAME)
 #     for double backslashes (\\). Make sure you have two tacked
 #     onto the end  ("...Challenges\\")
 
-###For DS PC
-pathName = "C:\\Users\\dstromberg\\OneDrive\\KindnessChallenges\\"
-###
+####### For DS PC ########
+# pathName = "C:\\Users\\dstromberg\\OneDrive\\KindnessChallenges\\"
+##########################
 
-# pathName = "C:\\Users\\Visitors\\OneDrive\\KindnessChallenges\\"
+pathName = "C:\\Users\\Visitors\\OneDrive\\KindnessChallenges\\"
 quotePath = pathName + "Quotes\\"
 easyPath = pathName + "Challenges\\1_Easy\\"
 medPath = pathName + "Challenges\\2_Medium\\"

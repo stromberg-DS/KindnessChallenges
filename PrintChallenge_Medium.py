@@ -10,7 +10,9 @@ import random
 import pygetwindow as gw
 import time
 
-timeToPrint = False
+timeToPrint = threading.Event()
+focusEvent = threading.Event()
+
 QUOTES = 0
 EASY = 1
 MEDIUM = 2
@@ -21,16 +23,45 @@ HARD = 3
 DIFFICULTY_LEVEL = MEDIUM
 ##############
 
+# Wait for Enter key press
 def waitForInput():
-    input("Press Enter")
-    print("Sending to Printer!")
-    timeToPrint = True
-    
-#Name the window for reference later
-system("title " + "Random Acts of Kindness")    
+    while True:
+        input("Press Enter")
+        print("Sending to Printer!")
+        timeToPrint.set()       #Signal it's time to print
 
-lastFocusTime = time.time()
-print(time.time())
+# Reset computer focus to python window
+def resetWindowFocus():
+    while True:
+        focusEvent.wait(10)     #only wake up every 10 seconds
+        python_window = gw.getWindowsWithTitle(WINDOW_NAME)[0]
+        if not python_window.isActive:
+            python_window.minimize()
+            python_window.restore()
+            print("Refocused the python window at:", time.strftime("%H:%M:%S"))
+        else:
+            print("Window still active at:", time.strftime("%H:%M:%S" + "!!"))
+        focusEvent.clear()  #Reset event until triggered again
+
+
+        
+        
+# Send random file to the printer
+def printChallenge():
+    while True:
+        timeToPrint.wait()  # Wait until signaled to print
+        rndMax = random.randrange(0, len(currentList[DIFFICULTY_LEVEL]))
+        filename = currentList[DIFFICULTY_LEVEL][rndMax]
+        print(currentPath[DIFFICULTY_LEVEL] + filename)
+        os.startfile(currentPath[DIFFICULTY_LEVEL] + filename, "print")
+        timeToPrint.clear() # Reset printing signal
+
+
+
+
+#Name the window for reference later
+WINDOW_NAME = "Random Acts of Kindness"
+system("title " + WINDOW_NAME)    
 
 # All of these paths go to a OneDrive folder that I have set up
 #     This way, I can easily update the challenges remotely and
@@ -38,9 +69,11 @@ print(time.time())
 #     NOTE: Make sure to swap all single backslashes (\)
 #     for double backslashes (\\). Make sure you have two tacked
 #     onto the end  ("...Challenges\\")
-###For DS PC
+
+####### For DS PC ########
 # pathName = "C:\\Users\\dstromberg\\OneDrive\\KindnessChallenges\\"
-###
+##########################
+
 pathName = "C:\\Users\\Visitors\\OneDrive\\KindnessChallenges\\"
 quotePath = pathName + "Quotes\\"
 easyPath = pathName + "Challenges\\1_Easy\\"
@@ -72,16 +105,20 @@ numFilesInFolder = [11, 12, 6]
 
 os.startfile(pathName + "Challenges\\StartupPrint.txt", "print")
 
-while True:
-    input("Press enter")
-    currentTime = time.time()
+# Start Threading
+input_thread = threading.Thread(target=waitForInput)
+focus_thread = threading.Thread(target=resetWindowFocus)
+print_thread = threading.Thread(target=printChallenge)
 
-    if (time.time() - lastFocusTime) > 2:
-        print("Focus Time!")
-        lastFocusTime = time.time()
+input_thread.start()
+focus_thread.start()
+print_thread.start()
+
+# Join threads
+input_thread.join()
+focus_thread.join()
+print_thread.join()
+
     
-    rndMax = random.randrange(0, len(currentList[DIFFICULTY_LEVEL]))
-    filename = currentList[DIFFICULTY_LEVEL][rndMax]
-    print(currentPath[DIFFICULTY_LEVEL] + filename)
-    os.startfile(currentPath[DIFFICULTY_LEVEL] + filename, "print")
+
   
