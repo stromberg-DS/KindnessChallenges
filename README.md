@@ -82,7 +82,7 @@ We used a 6mm x 12mm "neon" LED strip inlayed into the wood for the light up pat
 
 ## Folder Info
 ### General
-The main Python programs are located in the main folder. They are: PrintChallenge_Easy.py, PrintChallenge_Medium.py, and PrintChallenge_Hard.py. There is an optional **PrintChallenge_Quotes.py** if you want to print out quotes about kindness (though there are not many).
+The main Python programs are located in the main folder. They are: **PrintChallenge_Easy.py**, **PrintChallenge_Medium.py**, and **PrintChallenge_Hard.py**. There is an optional **PrintChallenge_Quotes.py** if you want to print out quotes about kindness (though there are not many).
 There is also a PDF with setup instructions (most of which are already listed here).
 
 ### Challenges
@@ -105,6 +105,7 @@ This folder contains plain text quotes about kindness. This was made as a potent
 
 ### Wiring Diagrams
 Nothing too complicated, but here are the wiring diagrams for the Photon 2, button, and LED strip.
+![Photon 2, button, and LED wiring diagram](https://github.com/stromberg-DS/KindnessChallenges/blob/master/WiringDiagrams/KindChallengeButton_bb.jpg)
 
 ### Tests
 Random tests, nothing interesting here.
