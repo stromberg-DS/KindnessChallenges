@@ -29,12 +29,12 @@ const int PRINTER_DELAY = 1000; //How long it takes to print after signal is sen
 const int PIXEL_COUNT = 314;  //314 pixels on neon-style strip
 const int HARD_COLOR_RED = 0xFF1105;    //old DS red: 0xFF1105, brand red: 0xC56B29
 const int MED_COLOR_YELLOW = 0xFF8805;  //old DS yellow: 0xFF8805, brand yellow:0xF1AA1E
-const int EZ_COLOR_GREEN = 0x6AC2C4;    //old DS green: 0x33FF22
+const int EZ_COLOR_GREEN = 0x33FF22;    //old DS green: 0x33FF22, brand blue?: 0x6AC2C4
 
 /////////////////// CHANGE BELOW DEPENDING ON DIFFICULTY ///////////////////
 //
-const int THIS_STRIP_COLOR = HARD_COLOR_RED;      //change color here depending on the difficulty
-const int THIS_BUTTON_DELAY = HARD_BUTTON_DELAY;    //change delay here depending on the difficulty
+const int THIS_STRIP_COLOR = EZ_COLOR_GREEN;      //change color here depending on the difficulty
+const int THIS_BUTTON_DELAY = EZ_BUTTON_DELAY;    //change delay here depending on the difficulty
 //
 ////////////////////////////////////////////////////////////////////////////
 
