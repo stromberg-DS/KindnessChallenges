@@ -33,7 +33,7 @@ def waitForInput():
 # Reset computer focus to python window
 def resetWindowFocus():
     while True:
-        focusEvent.wait(10)     #only wake up every 10 seconds
+        focusEvent.wait(60)     #only wake up every 60 seconds
         python_window = gw.getWindowsWithTitle(WINDOW_NAME)[0]
         if not python_window.isActive:
             python_window.minimize()
