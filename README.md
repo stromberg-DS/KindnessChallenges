@@ -80,5 +80,32 @@ We used a 6mm x 12mm "neon" LED strip inlayed into the wood for the light up pat
   * All PCs have [Rust Desk](https://rustdesk.com/) installed on them.
   * This way, we can remotely sign into the computers without needing to open up each cabinet.
 
-### Other
-  * It is probably helpful to turn off as many notifications as possible. The Python code does refocus the window occasionally, but it's a bit nicer if it doesn't have to.
+## Folder Info
+### General
+The main Python programs are located in the main folder. They are: **PrintChallenge_Easy.py**, **PrintChallenge_Medium.py**, and **PrintChallenge_Hard.py**. There is an optional **PrintChallenge_Quotes.py** if you want to print out quotes about kindness (though there are not many).
+There is also a PDF with setup instructions (most of which are already listed here).
+
+### Challenges
+This is where all of the plain text files of challenges are stored. They are in their own folders: Easy, Medium, Hard. There is also a startup text file which lets you know if everything booted up correctly.
+
+### CutFiles
+These are all files to cut out the generators on a CNC router.
+
+### Graphics
+Included here are photos of the generators as well as graphics used in the reciept printouts.
+
+### PrinterButton
+This is the code for the Photon 2 which recieves the button press and lights up the LEDs. This folder should be opened up in VS Code with the Particle workbench installed.
+
+### Arduino_EnterButton
+This is old code I used when first starting with the Arduino Pro Micro. I switched over to the Photon 2 so the code in here is likely not very good and may not work. 
+
+### Quotes
+This folder contains plain text quotes about kindness. This was made as a potential alternative/addition to the kindness challenges.
+
+### Wiring Diagrams
+Nothing too complicated, but here are the wiring diagrams for the Photon 2, button, and LED strip.
+![Photon 2, button, and LED wiring diagram](https://github.com/stromberg-DS/KindnessChallenges/blob/master/WiringDiagrams/KindChallengeButton_bb.jpg)
+
+### Tests
+Random tests, nothing interesting here.
